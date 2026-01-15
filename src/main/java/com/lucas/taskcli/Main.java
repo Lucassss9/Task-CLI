@@ -1,10 +1,14 @@
 package com.lucas.taskcli;
 
+import com.lucas.taskcli.ui.Menu;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Task CLI Iniciado... \n ");
+
+        Menu menu = new Menu();
 
         boolean running = true;
 
@@ -12,19 +16,25 @@ public class Main {
 
         while (running) {
 
-            System.out.println("1 - Adicionar tarefa \n" +
-                    "2 - Listar tarefas \n" +
-                    "0 - Sair");
+            menu.menu();
 
-            System.out.println("\nEscolha uma opção: ");
-            int escolha = sc.nextInt();
+            int escolha = menu.mostrarMenuEObterEntrada();
 
-            if (escolha == 1) {
-                System.out.println("Em construção...");
-            } else if (escolha == 2) {
-                System.out.println("Em construção...");
-            } else {
-                running = false;
+            switch (escolha) {
+                case 0:
+                    System.out.println("Encerrando...");
+                    running = false;
+                    break;
+                case 1:
+                    System.out.println("Em desenvolvimento...");
+                    break;
+                case 2:
+                    System.out.println("Em desenvolvimento...");
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+                    break;
+
             }
         }
     }
