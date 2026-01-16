@@ -15,6 +15,13 @@ public class Menu {
     public int mostrarMenuEObterEntrada () {
         System.out.println("Escolha uma opção: ");
         int escolha = sc.nextInt();
+        sc.nextLine();
         return escolha;
+    }
+
+    public String lerMensagem() {
+        System.out.println("Digite a descrição: ");
+        String descricao = sc.nextLine();
+        return descricao;
     }
 }

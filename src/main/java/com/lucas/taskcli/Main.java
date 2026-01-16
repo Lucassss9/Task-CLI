@@ -1,18 +1,23 @@
 package com.lucas.taskcli;
 
+import com.lucas.taskcli.model.Task;
 import com.lucas.taskcli.ui.Menu;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
+
+    private static int nextId = 1;
+
     public static void main(String[] args) {
         System.out.println("Task CLI Iniciado... \n ");
+
+        List<Task> tasks = new ArrayList<>();
 
         Menu menu = new Menu();
 
         boolean running = true;
-
-        Scanner sc = new Scanner(System.in);
 
         while (running) {
 
@@ -26,7 +31,15 @@ public class Main {
                     running = false;
                     break;
                 case 1:
-                    System.out.println("Em desenvolvimento...");
+                    String descricao = menu.lerMensagem();
+
+                    Task task = new Task(nextId, descricao);
+
+                    tasks.add(task);
+
+                    System.out.println("Criada tarefa #" + nextId);
+                    nextId++;
+
                     break;
                 case 2:
                     System.out.println("Em desenvolvimento...");
