@@ -38,16 +38,25 @@ public class Main {
                     tasks.add(task);
 
                     System.out.println("Criada tarefa #" + nextId);
+                    System.out.println(" ");
                     nextId++;
-
                     break;
                 case 2:
-                    System.out.println("Em desenvolvimento...");
+                    if (tasks.isEmpty()) {
+                        System.out.println("Nenhuma tarefa cadastrada...");
+                        break;
+                    }
+                    for (Task list : tasks) {
+                        String status = list.isConcluida() ? "CONCLUÍDA" : "PENDENTE";
+
+                        System.out.println("[#" + list.getId() + "] " + list.getDescricao() + " - " + status);
+                    }
                     break;
+                case 3:
+                    menu.concluirTask(tasks);
                 default:
                     System.out.println("Opção inválida.");
                     break;
-
             }
         }
     }

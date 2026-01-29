@@ -12,4 +12,19 @@ public class Task {
         this.concluida = false;
     }
 
+    public boolean isConcluida() {
+        return concluida;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setConcluida() {
+        concluida = true;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
