@@ -13,6 +13,7 @@ public class Menu {
         System.out.println("1 - Adicionar tarefa \n" +
                 "2 - Listar tarefas \n" +
                 "3- Concluir Tarefa \n"  +
+                "4 - Remover Tarefa \n" +
                 "0 - Sair");
     }
 
@@ -30,8 +31,8 @@ public class Menu {
     }
 
     public void concluirTask(List<Task> tasks) {
-        System.out.println("Qual Task você concluiu? (Concluir por Id) \n");
-        Integer id = sc.nextInt();
+        System.out.println("Qual Task você concluiu? (Concluir por Id)");
+        int id = sc.nextInt();
 
         for (Task list : tasks) {
             if (list.getId() == id && !list.isConcluida()) {
@@ -44,5 +45,14 @@ public class Menu {
         }
 
         System.out.println("Id não existe.");
+    }
+
+    public void removerTask(List<Task> tasks) {
+        System.out.println("Qual task deseja remover? (Remover por id)");
+        int id = sc.nextInt();
+
+        tasks.removeIf(task -> task.getId() == id);
+
+        System.out.println("Task '" + id + "' removida da lista.");
     }
 }

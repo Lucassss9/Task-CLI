@@ -54,6 +54,10 @@ public class Main {
                     break;
                 case 3:
                     menu.concluirTask(tasks);
+                    break;
+                case 4:
+                    menu.removerTask(tasks);
+                    break;
                 default:
                     System.out.println("Opção inválida.");
                     break;
